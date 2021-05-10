@@ -12,14 +12,18 @@ document.querySelector("form").addEventListener("submit", (e) => {
 });
 
 document.querySelector(".reset").addEventListener("click", () => {
+  pauseBtn.textContent = "pause";
+  pauseBtn.classList.remove("resume");
   startBtn.style.transform = "scale(1)";
   clearTimeout(initial);
   setProgress(0);
   mindiv.textContent = 0;
   secdiv.textContent = 0;
+  paused=undefined;
 });
 
 pauseBtn.addEventListener("click", () => {
+
   if (paused === undefined) {
     return;
   }
